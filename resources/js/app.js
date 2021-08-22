@@ -1,14 +1,6 @@
-import store from './store'
 import { createApp } from 'vue'
+import App from './App.vue'
+import './assets/css/main.css';
 
-window.Vue = require('vue').default;
-import Hello from './components/Hello.vue';
-
-const app = new Vue({
-    el: '#app',
-    components: {
-        Hello,
-    }
-});
-
-app.use(store);
+const aplikasi = createApp(App);
+aplikasi.mount('app');
