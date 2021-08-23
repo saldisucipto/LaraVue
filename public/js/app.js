@@ -17404,6 +17404,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Auth",
+  data: function data() {
+    return {
+      tab: "login"
+    };
+  },
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(["authModalShow"])),
   methods: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapMutations)(["toggleAuthModalShow"]))
 });
@@ -17767,12 +17772,125 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_9 = [_hoisted_8];
+var _hoisted_10 = {
+  "class": "flex flex-wrap mb-4"
+};
+var _hoisted_11 = {
+  "class": "flex-auto text-center"
+};
+var _hoisted_12 = {
+  "class": "flex-auto text-center"
+};
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<ul class=\"flex flex-wrap mb-4\"><li class=\"flex-auto text-center\"><a class=\"\n                                        block\n                                        rounded\n                                        py-3\n                                        px-4\n                                        transition\n                                        hover:text-white\n                                        text-white\n                                        bg-blue-600\n                                    \" href=\"#\">Login</a></li><li class=\"flex-auto text-center\"><a class=\"block rounded py-3 px-4 transition\" href=\"#\">Register</a></li></ul>", 1);
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "inline-block mb-2"
+}, "Email"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "email",
+  "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    ",
+  placeholder: "Enter Email"
+})], -1
+/* HOISTED */
+);
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<form><!-- Email --><div class=\"mb-3\"><label class=\"inline-block mb-2\">Email</label><input type=\"email\" class=\"\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    \" placeholder=\"Enter Email\"></div><!-- Password --><div class=\"mb-3\"><label class=\"inline-block mb-2\">Password</label><input type=\"password\" class=\"\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    \" placeholder=\"Password\"></div><button type=\"submit\" class=\"\n                                    block\n                                    w-full\n                                    bg-purple-600\n                                    text-white\n                                    py-1.5\n                                    px-3\n                                    rounded\n                                    transition\n                                    hover:bg-purple-700\n                                \"> Submit </button></form>", 1);
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "inline-block mb-2"
+}, "Password"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "password",
+  "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    ",
+  placeholder: "Password"
+})], -1
+/* HOISTED */
+);
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<form><!-- Name --><div class=\"mb-3\"><label class=\"inline-block mb-2\">Name</label><input type=\"text\" class=\"\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    \" placeholder=\"Enter Name\"></div><!-- Email --><div class=\"mb-3\"><label class=\"inline-block mb-2\">Email</label><input type=\"email\" class=\"\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    \" placeholder=\"Enter Email\"></div><!-- Age --><div class=\"mb-3\"><label class=\"inline-block mb-2\">Age</label><input type=\"number\" class=\"\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    \"></div><!-- Password --><div class=\"mb-3\"><label class=\"inline-block mb-2\">Password</label><input type=\"password\" class=\"\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    \" placeholder=\"Password\"></div><!-- Confirm Password --><div class=\"mb-3\"><label class=\"inline-block mb-2\">Confirm Password</label><input type=\"password\" class=\"\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    \" placeholder=\"Confirm Password\"></div><!-- Country --><div class=\"mb-3\"><label class=\"inline-block mb-2\">Country</label><select class=\"\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    \"><option value=\"USA\">USA</option><option value=\"Mexico\">Mexico</option><option value=\"Germany\">Germany</option></select></div><!-- TOS --><div class=\"mb-3 pl-6\"><input type=\"checkbox\" class=\"\n                                        w-4\n                                        h-4\n                                        float-left\n                                        -ml-6\n                                        mt-1\n                                        rounded\n                                    \"><label class=\"inline-block\">Accept terms of service</label></div><button type=\"submit\" class=\"\n                                    block\n                                    w-full\n                                    bg-purple-600\n                                    text-white\n                                    py-1.5\n                                    px-3\n                                    rounded\n                                    transition\n                                    hover:bg-purple-700\n                                \"> Submit </button></form>", 1);
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "submit",
+  "class": "\n                                    block\n                                    w-full\n                                    bg-purple-600\n                                    text-white\n                                    py-1.5\n                                    px-3\n                                    rounded\n                                    transition\n                                    hover:bg-purple-700\n                                "
+}, " Submit ", -1
+/* HOISTED */
+);
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "inline-block mb-2"
+}, "Name"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "text",
+  "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    ",
+  placeholder: "Enter Name"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "inline-block mb-2"
+}, "Email"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "email",
+  "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    ",
+  placeholder: "Enter Email"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "inline-block mb-2"
+}, "Age"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "number",
+  "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    "
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "inline-block mb-2"
+}, "Password"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "password",
+  "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    ",
+  placeholder: "Password"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "inline-block mb-2"
+}, "Confirm Password"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "password",
+  "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    ",
+  placeholder: "Confirm Password"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mb-3\"><label class=\"inline-block mb-2\">Country</label><select class=\"\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    \"><option value=\"USA\">USA</option><option value=\"Mexico\">Mexico</option><option value=\"Germany\">Germany</option></select></div>", 1);
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mb-3 pl-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "checkbox",
+  "class": "\n                                        w-4\n                                        h-4\n                                        float-left\n                                        -ml-6\n                                        mt-1\n                                        rounded\n                                    "
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "inline-block"
+}, "Accept terms of service")], -1
+/* HOISTED */
+);
+
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "submit",
+  "class": "\n                                    block\n                                    w-full\n                                    bg-purple-600\n                                    text-white\n                                    py-1.5\n                                    px-3\n                                    rounded\n                                    transition\n                                    hover:bg-purple-700\n                                "
+}, " Submit ", -1
+/* HOISTED */
+);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17785,7 +17903,33 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return _ctx.toggleAuthModalShow && _ctx.toggleAuthModalShow.apply(_ctx, arguments);
     }, ["prevent"]))
-  }, _hoisted_9)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Tabs "), _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Login Form "), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Registration Form "), _hoisted_12])])])], 2
+  }, _hoisted_9)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Tabs "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["block rounded py-3 px-4 transition", {
+      'hover:text-white text-white bg-blue-600': $data.tab === 'login',
+      'hover:text-blue-600': $data.tab === 'register'
+    }]),
+    href: "#",
+    onClick: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $data.tab = 'login';
+    }, ["prevent"]))
+  }, "Login", 2
+  /* CLASS */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["block rounded py-3 px-4 transition", {
+      'hover:text-white text-white bg-blue-600': $data.tab === 'register',
+      'hover:text-blue-600': $data.tab === 'login'
+    }]),
+    href: "#",
+    onClick: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $data.tab = 'register';
+    }, ["prevent"]))
+  }, "Register", 2
+  /* CLASS */
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Login Form "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Email "), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Password "), _hoisted_14, _hoisted_15], 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.tab === 'login']]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Registration Form "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Name "), _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Email "), _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Age "), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Password "), _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Confirm Password "), _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Country "), _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TOS "), _hoisted_22, _hoisted_23], 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.tab === 'register']])])])])], 2
   /* CLASS */
   )]);
 }
