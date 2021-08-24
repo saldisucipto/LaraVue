@@ -85,7 +85,6 @@
                                 >
                             </li>
                         </ul>
-
                         <!-- Login Form -->
                         <form v-show="tab === 'login'">
                             <!-- Email -->
