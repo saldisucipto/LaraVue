@@ -147,12 +147,16 @@
                             </button>
                         </form>
                         <!-- Registration Form -->
-                        <form v-show="tab === 'register'">
+                        <vee-form
+                            v-show="tab === 'register'"
+                            :validation-schema="schema"
+                        >
                             <!-- Name -->
                             <div class="mb-3">
                                 <label class="inline-block mb-2">Name</label>
-                                <input
+                                <vee-field
                                     type="text"
+                                    name="name"
                                     class="
                                         block
                                         w-full
@@ -167,12 +171,17 @@
                                     "
                                     placeholder="Enter Name"
                                 />
+                                <ErrorMessage
+                                    class="text-red-600"
+                                    name="name"
+                                />
                             </div>
                             <!-- Email -->
                             <div class="mb-3">
                                 <label class="inline-block mb-2">Email</label>
-                                <input
+                                <vee-field
                                     type="email"
+                                    name="email"
                                     class="
                                         block
                                         w-full
@@ -187,12 +196,17 @@
                                     "
                                     placeholder="Enter Email"
                                 />
+                                <ErrorMessage
+                                    class="text-red-600"
+                                    name="email"
+                                />
                             </div>
                             <!-- Age -->
                             <div class="mb-3">
                                 <label class="inline-block mb-2">Age</label>
-                                <input
+                                <veeField
                                     type="number"
+                                    name="age"
                                     class="
                                         block
                                         w-full
@@ -206,6 +220,7 @@
                                         rounded
                                     "
                                 />
+                                <ErrorMessage class="text-red-600" name="age" />
                             </div>
                             <!-- Password -->
                             <div class="mb-3">
@@ -306,7 +321,7 @@
                             >
                                 Submit
                             </button>
-                        </form>
+                        </vee-form>
                     </div>
                 </div>
             </div>
@@ -322,6 +337,15 @@ export default {
     data() {
         return {
             tab: "login",
+            schema: {
+                name: "required|min:3|max:100|alpha_spaces",
+                email: "required|email",
+                age: "required|min_value:18|max_value:100",
+                password: "",
+                confirm_password: "",
+                country: "",
+                tos: "",
+            },
         };
     },
     computed: {
