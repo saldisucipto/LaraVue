@@ -17988,10 +17988,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         name: "required|min:3|max:100|alpha_spaces",
         email: "required|email",
         age: "required|min_value:18|max_value:100",
-        password: "",
-        confirm_password: "",
-        country: "",
-        tos: ""
+        password: "required|min:3|max:100",
+        confirm_password: "confirmed:@password",
+        country: "required|exclude:Antartica",
+        tos: "required"
       }
     };
   },
@@ -18429,58 +18429,72 @@ var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_22 = {
   "class": "mb-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+};
+
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "inline-block mb-2"
-}, "Password"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "password",
-  "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    ",
-  placeholder: "Password"
-})], -1
+}, "Password", -1
 /* HOISTED */
 );
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_24 = {
   "class": "mb-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+};
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "inline-block mb-2"
-}, "Confirm Password"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "password",
-  "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    ",
-  placeholder: "Confirm Password"
-})], -1
+}, "Confirm Password", -1
 /* HOISTED */
 );
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_26 = {
   "class": "mb-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+};
+
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "inline-block mb-2"
-}, "Country"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
-  "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    "
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+}, "Country", -1
+/* HOISTED */
+);
+
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "USA"
-}, "USA"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+}, "USA", -1
+/* HOISTED */
+);
+
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "Mexico"
-}, "Mexico"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+}, "Mexico", -1
+/* HOISTED */
+);
+
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "Germany"
-}, "Germany")])], -1
+}, "Germany", -1
 /* HOISTED */
 );
 
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  selected: "",
+  value: "Antartica"
+}, " Select Country ", -1
+/* HOISTED */
+);
+
+var _hoisted_32 = {
   "class": "mb-3 pl-6"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "checkbox",
-  "class": "\n                                        w-4\n                                        h-4\n                                        float-left\n                                        -ml-6\n                                        mt-1\n                                        rounded\n                                    "
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+};
+
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "inline-block"
-}, "Accept terms of service")], -1
+}, "Accept terms of service", -1
 /* HOISTED */
 );
 
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "submit",
   "class": "\n                                    block\n                                    w-full\n                                    bg-purple-600\n                                    text-white\n                                    py-1.5\n                                    px-3\n                                    rounded\n                                    transition\n                                    hover:bg-purple-700\n                                "
 }, " Submit ", -1
@@ -18557,7 +18571,45 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorMessage, {
         "class": "text-red-600",
         name: "age"
-      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Password "), _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Confirm Password "), _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Country "), _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TOS "), _hoisted_25, _hoisted_26];
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Password "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_vee_field, {
+        type: "password",
+        name: "password",
+        "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    ",
+        placeholder: "Password"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorMessage, {
+        "class": "text-red-600",
+        name: "password"
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Confirm Password "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_vee_field, {
+        type: "password",
+        name: "confirm_password",
+        "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    ",
+        placeholder: "Confirm Password"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorMessage, {
+        "class": "text-red-600",
+        name: "confirm_password"
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Country "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_vee_field, {
+        as: "select",
+        name: "country",
+        "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    "
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_28, _hoisted_29, _hoisted_30, _hoisted_31];
+        }),
+        _: 1
+        /* STABLE */
+
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorMessage, {
+        "class": "text-red-600",
+        name: "country"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TOS "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_vee_field, {
+        type: "checkbox",
+        value: "1",
+        name: "tos",
+        "class": "\n                                        w-4\n                                        h-4\n                                        float-left\n                                        -ml-6\n                                        mt-1\n                                        rounded\n                                    "
+      }), _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorMessage, {
+        "class": "text-red-600 block",
+        name: "tos"
+      })]), _hoisted_34];
     }),
     _: 1
     /* STABLE */
@@ -18677,6 +18729,8 @@ __webpack_require__.r(__webpack_exports__);
     (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('email', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.email);
     (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('min_value', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.min_value);
     (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('max_value', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.max_value);
+    (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('confirmed', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.confirmed);
+    (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('exclude', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.not_one_of);
   }
 });
 
