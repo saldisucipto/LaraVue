@@ -150,6 +150,7 @@
                         <vee-form
                             v-show="tab === 'register'"
                             :validation-schema="schema"
+                            @submit="register"
                         >
                             <!-- Name -->
                             <div class="mb-3">
@@ -377,6 +378,10 @@ export default {
     methods: {
         // method properties teggle Modal
         ...mapMutations(["toggleAuthModalShow"]),
+        register(values){
+            // get value from at submit
+            conosole.log(values);
+        }
     },
 };
 </script>
