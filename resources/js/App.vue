@@ -441,7 +441,9 @@
                 <!-- .. end Playlist -->
             </div>
         </section>
-
+        <hello-world v-slot="{ user, favorites }">
+            <p>Hello {{ user.name }} - {{ favorites[0] }}</p>
+        </hello-world>
         <!-- Player -->
         <div
             class="
@@ -533,6 +535,7 @@
                         ></span>
                     </span>
                 </div>
+
                 <!-- Duration -->
                 <div
                     class="
@@ -552,7 +555,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Auth Modal -->
         <auth />
     </div>
@@ -562,12 +564,14 @@
 // import Components
 import Auth from "./components/Auth.vue";
 import HeaderNavigasi from "./components/HeaderNavigasi.vue";
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
     name: "App",
     components: {
         Auth,
         HeaderNavigasi,
+        HelloWorld,
     },
 };
 </script>
