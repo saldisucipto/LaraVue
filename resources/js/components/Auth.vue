@@ -151,6 +151,7 @@
                             v-show="tab === 'register'"
                             :validation-schema="schema"
                             @submit="register"
+                            :initial-values="userData"
                         >
                             <!-- Name -->
                             <div class="mb-3">
@@ -229,22 +230,36 @@
                                     >Password</label
                                 >
                                 <vee-field
-                                    type="password"
                                     name="password"
-                                    class="
-                                        block
-                                        w-full
-                                        py-1.5
-                                        px-3
-                                        text-gray-800
-                                        border border-gray-300
-                                        transition
-                                        duration-500
-                                        focus:outline-none focus:border-black
-                                        rounded
-                                    "
-                                    placeholder="Password"
-                                />
+                                    :bails="false"
+                                    v-slot="{ field, errors }"
+                                >
+                                    <input
+                                        type="password"
+                                        class="
+                                            block
+                                            w-full
+                                            py-1.5
+                                            px-3
+                                            text-gray-800
+                                            border border-gray-300
+                                            transition
+                                            duration-500
+                                            focus:outline-none
+                                            focus:border-black
+                                            rounded
+                                        "
+                                        placeholder="Password"
+                                        v-bind="field"
+                                    />
+                                    <div
+                                        class="text-red-600"
+                                        v-for="error in errors"
+                                        :key="error"
+                                    >
+                                        {{ error }}
+                                    </div>
+                                </vee-field>
                                 <ErrorMessage
                                     class="text-red-600"
                                     name="password"
@@ -299,9 +314,6 @@
                                     <option value="USA">USA</option>
                                     <option value="Mexico">Mexico</option>
                                     <option value="Germany">Germany</option>
-                                    <option selected value="Antartica">
-                                        Select Country
-                                    </option>
                                 </vee-field>
                             </div>
                             <ErrorMessage class="text-red-600" name="country" />
@@ -369,6 +381,9 @@ export default {
                 country: "required|exclude:Antartica",
                 tos: "required",
             },
+            userData: {
+                country: "USA",
+            },
         };
     },
     computed: {
@@ -378,10 +393,10 @@ export default {
     methods: {
         // method properties teggle Modal
         ...mapMutations(["toggleAuthModalShow"]),
-        register(values){
+        register(values) {
             // get value from at submit
             conosole.log(values);
-        }
+        },
     },
 };
 </script>

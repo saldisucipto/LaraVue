@@ -17995,6 +17995,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         confirm_password: "confirmed:@password",
         country: "required|exclude:Antartica",
         tos: "required"
+      },
+      userData: {
+        country: "USA"
       }
     };
   },
@@ -18331,22 +18334,9 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_header_navigasi = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("header-navigasi");
 
-  var _component_hello_world = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("hello-world");
-
   var _component_auth = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("auth");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header Components "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_header_navigasi), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Introduction "), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main Content "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hello_world, null, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref) {
-      var user = _ref.user,
-          favorites = _ref.favorites;
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Hello " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.name) + " - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(favorites[0]), 1
-      /* TEXT */
-      )];
-    }),
-    _: 1
-    /* STABLE */
-
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Player "), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Auth Modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auth)]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header Components "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_header_navigasi), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Introduction "), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main Content "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <hello-world v-slot=\"{ user, favorites }\">\n            <p>Hello {{ user.name }} - {{ favorites[0] }}</p>\n        </hello-world> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Player "), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Auth Modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auth)]);
 }
 
 /***/ }),
@@ -18524,24 +18514,17 @@ var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  selected: "",
-  value: "Antartica"
-}, " Select Country ", -1
-/* HOISTED */
-);
-
-var _hoisted_32 = {
+var _hoisted_31 = {
   "class": "mb-3 pl-6"
 };
 
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "inline-block"
 }, "Accept terms of service", -1
 /* HOISTED */
 );
 
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "submit",
   "class": "\n                                    block\n                                    w-full\n                                    bg-purple-600\n                                    text-white\n                                    py-1.5\n                                    px-3\n                                    rounded\n                                    transition\n                                    hover:bg-purple-700\n                                "
 }, " Submit ", -1
@@ -18593,7 +18576,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.tab === 'login']]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Registration Form "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_vee_form, {
     "validation-schema": $data.schema,
-    onSubmit: $options.register
+    onSubmit: $options.register,
+    "initial-values": $data.userData
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Name "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_vee_field, {
@@ -18620,10 +18604,32 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "text-red-600",
         name: "age"
       })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Password "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_vee_field, {
-        type: "password",
         name: "password",
-        "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    ",
-        placeholder: "Password"
+        bails: false
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref) {
+          var field = _ref.field,
+              errors = _ref.errors;
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+            type: "password",
+            "class": "\n                                            block\n                                            w-full\n                                            py-1.5\n                                            px-3\n                                            text-gray-800\n                                            border border-gray-300\n                                            transition\n                                            duration-500\n                                            focus:outline-none\n                                            focus:border-black\n                                            rounded\n                                        ",
+            placeholder: "Password"
+          }, field), null, 16
+          /* FULL_PROPS */
+          ), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(errors, function (error) {
+            return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+              "class": "text-red-600",
+              key: error
+            }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(error), 1
+            /* TEXT */
+            );
+          }), 128
+          /* KEYED_FRAGMENT */
+          ))];
+        }),
+        _: 1
+        /* STABLE */
+
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorMessage, {
         "class": "text-red-600",
         name: "password"
@@ -18641,7 +18647,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "\n                                        block\n                                        w-full\n                                        py-1.5\n                                        px-3\n                                        text-gray-800\n                                        border border-gray-300\n                                        transition\n                                        duration-500\n                                        focus:outline-none focus:border-black\n                                        rounded\n                                    "
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_28, _hoisted_29, _hoisted_30, _hoisted_31];
+          return [_hoisted_28, _hoisted_29, _hoisted_30];
         }),
         _: 1
         /* STABLE */
@@ -18649,22 +18655,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorMessage, {
         "class": "text-red-600",
         name: "country"
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TOS "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_vee_field, {
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TOS "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_vee_field, {
         type: "checkbox",
         value: "1",
         name: "tos",
         "class": "\n                                        w-4\n                                        h-4\n                                        float-left\n                                        -ml-6\n                                        mt-1\n                                        rounded\n                                    "
-      }), _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorMessage, {
+      }), _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorMessage, {
         "class": "text-red-600 block",
         name: "tos"
-      })]), _hoisted_34];
+      })]), _hoisted_33];
     }),
     _: 1
     /* STABLE */
 
   }, 8
   /* PROPS */
-  , ["validation-schema", "onSubmit"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.tab === 'register']])])])])], 2
+  , ["validation-schema", "onSubmit", "initial-values"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.tab === 'register']])])])])], 2
   /* CLASS */
   )]);
 }

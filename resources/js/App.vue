@@ -441,9 +441,9 @@
                 <!-- .. end Playlist -->
             </div>
         </section>
-        <hello-world v-slot="{ user, favorites }">
+        <!-- <hello-world v-slot="{ user, favorites }">
             <p>Hello {{ user.name }} - {{ favorites[0] }}</p>
-        </hello-world>
+        </hello-world> -->
         <!-- Player -->
         <div
             class="
