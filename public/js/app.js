@@ -18067,7 +18067,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "LoginForm"
+  name: "LoginForm",
+  data: function data() {
+    return {
+      loginSchema: {
+        // name field
+        email: "required|email",
+        password: "required|min:3|max:100"
+      },
+      login_in_submission: false,
+      login_show_alert: false,
+      login_alert_variant: "bb-blue-500",
+      login_alert_message: "Please Wait, Your Account Being Created"
+    };
+  },
+  methods: {
+    loginActions: function loginActions(value) {
+      this.login_show_alert = true;
+      this.login_alert_variant = "bg-blue-500";
+      this.login_alert_message = "Please Wait, Your Login is Procesed";
+      this.login_alert_variant = "bg-green-500";
+      this.login_alert_message = "Your Succes Login";
+      this.login_in_submission = true;
+      console.log(value);
+    }
+  }
 });
 
 /***/ }),
@@ -18600,12 +18624,74 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = {
+  "class": "mb-3"
+};
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<form><!-- Email --><div class=\"mb-3\"><label class=\"inline-block mb-2\">Email</label><input type=\"email\" class=\"\n                        block\n                        w-full\n                        py-1.5\n                        px-3\n                        text-gray-800\n                        border border-gray-300\n                        transition\n                        duration-500\n                        focus:outline-none focus:border-black\n                        rounded\n                    \" placeholder=\"Enter Email\"></div><!-- Password --><div class=\"mb-3\"><label class=\"inline-block mb-2\">Password</label><input type=\"password\" class=\"\n                        block\n                        w-full\n                        py-1.5\n                        px-3\n                        text-gray-800\n                        border border-gray-300\n                        transition\n                        duration-500\n                        focus:outline-none focus:border-black\n                        rounded\n                    \" placeholder=\"Password\"></div><button type=\"submit\" class=\"\n                    block\n                    w-full\n                    bg-purple-600\n                    text-white\n                    py-1.5\n                    px-3\n                    rounded\n                    transition\n                    hover:bg-purple-700\n                \"> Submit </button></form>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "inline-block mb-2"
+}, "Email", -1
+/* HOISTED */
+);
 
-var _hoisted_2 = [_hoisted_1];
+var _hoisted_3 = {
+  "class": "mb-3"
+};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "inline-block mb-2"
+}, "Password", -1
+/* HOISTED */
+);
+
+var _hoisted_5 = ["disabled"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, _hoisted_2);
+  var _component_vee_field = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("vee-field");
+
+  var _component_ErrorMessage = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ErrorMessage");
+
+  var _component_vee_form = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("vee-form");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_vee_form, {
+    "validation-schema": $data.loginSchema,
+    onSubmit: $options.loginActions
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Alert "), $data.login_show_alert ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+        key: 0,
+        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["text-white text-center font-bold p-5", $data.login_alert_variant])
+      }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.login_alert_message), 3
+      /* TEXT, CLASS */
+      )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Email "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_vee_field, {
+        type: "email",
+        name: "email",
+        "class": "\n                        block\n                        w-full\n                        py-1.5\n                        px-3\n                        text-gray-800\n                        border border-gray-300\n                        transition\n                        duration-500\n                        focus:outline-none focus:border-black\n                        rounded\n                    ",
+        placeholder: "Enter Email"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorMessage, {
+        "class": "text-red-600",
+        name: "email"
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Password "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_vee_field, {
+        name: "password",
+        type: "password",
+        "class": "\n                        block\n                        w-full\n                        py-1.5\n                        px-3\n                        text-gray-800\n                        border border-gray-300\n                        transition\n                        duration-500\n                        focus:outline-none focus:border-black\n                        rounded\n                    ",
+        placeholder: "Password"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorMessage, {
+        "class": "text-red-600",
+        name: "password"
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+        disabled: $data.login_in_submission,
+        type: "submit",
+        "class": "\n                    block\n                    w-full\n                    bg-purple-600\n                    text-white\n                    py-1.5\n                    px-3\n                    rounded\n                    transition\n                    hover:bg-purple-700\n                "
+      }, " Submit ", 8
+      /* PROPS */
+      , _hoisted_5)];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["validation-schema", "onSubmit"])]);
 }
 
 /***/ }),

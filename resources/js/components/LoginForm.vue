@@ -1,11 +1,20 @@
 <template>
     <div>
-        <form>
+        <vee-form :validation-schema="loginSchema" @submit="loginActions">
+            <!-- Alert -->
+            <div
+                class="text-white text-center font-bold p-5"
+                v-if="login_show_alert"
+                :class="login_alert_variant"
+            >
+                {{ login_alert_message }}
+            </div>
             <!-- Email -->
             <div class="mb-3">
                 <label class="inline-block mb-2">Email</label>
-                <input
+                <vee-field
                     type="email"
+                    name="email"
                     class="
                         block
                         w-full
@@ -20,11 +29,13 @@
                     "
                     placeholder="Enter Email"
                 />
+                <ErrorMessage class="text-red-600" name="email" />
             </div>
             <!-- Password -->
             <div class="mb-3">
                 <label class="inline-block mb-2">Password</label>
-                <input
+                <vee-field
+                    name="password"
                     type="password"
                     class="
                         block
@@ -40,8 +51,10 @@
                     "
                     placeholder="Password"
                 />
+                <ErrorMessage class="text-red-600" name="password" />
             </div>
             <button
+                :disabled="login_in_submission"
                 type="submit"
                 class="
                     block
@@ -57,12 +70,36 @@
             >
                 Submit
             </button>
-        </form>
+        </vee-form>
     </div>
 </template>
 
 <script>
 export default {
     name: "LoginForm",
+    data() {
+        return {
+            loginSchema: {
+                // name field
+                email: "required|email",
+                password: "required|min:3|max:100",
+            },
+            login_in_submission: false,
+            login_show_alert: false,
+            login_alert_variant: "bb-blue-500",
+            login_alert_message: "Please Wait, Your Account Being Created",
+        };
+    },
+    methods: {
+        loginActions(value) {
+            this.login_show_alert = true;
+            this.login_alert_variant = "bg-blue-500";
+            this.login_alert_message = "Please Wait, Your Login is Procesed";
+            this.login_alert_variant = "bg-green-500";
+            this.login_alert_message = "Your Succes Login";
+            this.login_in_submission = true;
+            console.log(value);
+        },
+    },
 };
 </script>
