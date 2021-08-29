@@ -377,9 +377,9 @@ export default {
                 email: "required|email",
                 age: "required|min_value:18|max_value:100",
                 password: "required|min:3|max:100",
-                confirm_password: "confirmed:@password",
-                country: "required|exclude:Antartica",
-                tos: "required",
+                confirm_password: "password_missmatch:@password",
+                country: "required|country_exclude:Antartica",
+                tos: "tos",
             },
             userData: {
                 country: "USA",

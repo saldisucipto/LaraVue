@@ -17992,9 +17992,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         email: "required|email",
         age: "required|min_value:18|max_value:100",
         password: "required|min:3|max:100",
-        confirm_password: "confirmed:@password",
-        country: "required|exclude:Antartica",
-        tos: "required"
+        confirm_password: "password_missmatch:@password",
+        country: "required|country_exclude:Antartica",
+        tos: "tos"
       },
       userData: {
         country: "USA"
@@ -18799,14 +18799,36 @@ __webpack_require__.r(__webpack_exports__);
     app.component('VeeField', vee_validate__WEBPACK_IMPORTED_MODULE_0__.Field);
     app.component('ErrorMessage', vee_validate__WEBPACK_IMPORTED_MODULE_0__.ErrorMessage);
     (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('required', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.required);
+    (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('tos', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.required);
     (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('min', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.min);
     (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('max', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.max);
     (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('alpha_spaces', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.alpha_spaces);
     (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('email', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.email);
     (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('min_value', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.min_value);
     (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('max_value', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.max_value);
-    (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('confirmed', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.confirmed);
+    (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('password_missmatch', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.confirmed);
     (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('exclude', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.not_one_of);
+    (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.defineRule)('country_exclude', _vee_validate_rules__WEBPACK_IMPORTED_MODULE_1__.not_one_of); // custome error
+
+    (0,vee_validate__WEBPACK_IMPORTED_MODULE_0__.configure)({
+      generateMessage: function generateMessage(ctx) {
+        var messages = {
+          required: "The Field ".concat(ctx.field, " is required."),
+          min: "The Field ".concat(ctx.field, " is too short."),
+          max: "The Field ".concat(ctx.field, " is too longs"),
+          alpha_spaces: "The Field ".concat(ctx.field, " may only contain alphabetical character and spaces"),
+          email: "The Field ".concat(ctx.field, " must be a valid email"),
+          min_value: "The Field ".concat(ctx.field, " is too low"),
+          max_value: "The Field ".concat(ctx.field, " is too high"),
+          exclude: "Your Not Allowed to use This Value ".concat(ctx.field, " "),
+          country_exclude: "Due to restrictions , we do not accept user to use this location",
+          password_missmatch: "The Password Doesnt Match",
+          tos: "You Must Accept the TA"
+        };
+        var message = messages[ctx.rule.name] ? messages[ctx.rule.name] : "The Field ".concat(ctx.field, " is invalid");
+        return message;
+      }
+    });
   }
 });
 
