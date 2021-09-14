@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\User; // use model user
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Auth;
 
 class AuthController extends Controller
@@ -13,23 +14,37 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         // return response()->json("Register Function", 200); ..debug
-        $this->validate($request, [
-            'name' => 'required|min:4',
-            'email' => 'required|email',
-            'age' => 'required',
-            'password' => 'required|min:8',
+        // $this->validate($request, [
+        //     'name' => 'required|min:4',
+        //     'email' => 'required|email|unique:users',
+        //     'age' => 'required',
+        //     'password' => 'required|min:8',
+        //     'country' => 'required',
+        //     'tos' => 'required',
+        // ]);
+        $validator =  Validator::make($request->all(), [
+                'name' => 'required|min:4',
+                'email' => 'required|email|unique:users',
+                'age' => 'required',
+                'password' => 'required|min:8',
+                'country' => 'required',
+                'tos' => 'required',
         ]);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->messages()->first()], 422);
+        } else {
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'age' => $request->age,
+                'password' => bcrypt($request->password),
+                'country' => $request->country,
+                'tos' => $request->tos,
+            ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'age' => $request->age,
-            'password' => bcrypt($request->password),
-        ]);
-
-        $token = $user->createToken('LaravelAuthApp')->accessToken;
-
-        return response()->json(['token' => $token, 'message' => 'User Berhasil Dibuat'], 200);
+            $token = $user->createToken('LaravelAuthApp')->accessToken;
+            return response()->json(['token' => $token, 'message' => 'User Berhasil Dibuat'], 200);
+        }
     }
     // Login Function
     public function login(Request $request)

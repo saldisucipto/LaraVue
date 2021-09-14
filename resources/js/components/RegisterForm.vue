@@ -192,6 +192,7 @@
 </template>
 
 <script>
+const axios = require("axios");
 export default {
     name: "RegistrationForm",
     data() {
@@ -204,6 +205,7 @@ export default {
                 confirm_password: "password_missmatch:@password",
                 country: "required|country_exclude:Antartica",
                 tos: "tos",
+                errors_message: null,
             },
             userData: {
                 country: "USA",
@@ -217,14 +219,35 @@ export default {
     methods: {
         register(values) {
             // get value from at submit
-            this.reg_in_submission = true;
-            this.reg_show_alert = true;
-            this.reg_alert_variant = "bg-blue-500";
-            this.reg_alert_message =
-                "Please Wait!, Your account is being created";
-            this.reg_alert_variant = "bg-green-500";
-            this.reg_alert_message = "Succes, Your Account Has Been Created";
-            console.log(values);
+            // post request with axios
+            const data = {
+                name: values.name,
+                email: values.email,
+                password: values.password,
+                age: values.age,
+                country: values.country,
+                tos: values.tos,
+            };
+            const header = {
+                Accept: "application/json",
+            };
+
+            axios
+                .post("http://laravue.test/api/register", data, { header })
+                .then((response) => {
+                    // console.log(response.data.message);
+                    this.reg_in_submission = true;
+                    this.reg_show_alert = true;
+                    this.reg_alert_variant = "bg-blue-500";
+                    this.reg_alert_message = `Success.. ${response.data.message}`;
+                })
+                .catch((e) => {
+                    this.reg_show_alert = true;
+                    this.reg_alert_variant = "bg-red-500";
+                    this.reg_alert_message = `Errors.. ${e.response.data.error}`;
+                    // console.log();
+                });
+            // console.log(values.country);
         },
     },
 };
