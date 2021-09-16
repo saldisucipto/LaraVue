@@ -75,6 +75,8 @@
 </template>
 
 <script>
+// import { mapMutations, mapGetters } from "vuex";
+
 export default {
     name: "LoginForm",
     data() {
@@ -91,14 +93,21 @@ export default {
         };
     },
     methods: {
-        loginActions(value) {
+        loginActions(values) {
             this.login_show_alert = true;
             this.login_alert_variant = "bg-blue-500";
             this.login_alert_message = "Please Wait, Your Login is Procesed";
-            this.login_alert_variant = "bg-green-500";
-            this.login_alert_message = "Your Succes Login";
-            this.login_in_submission = true;
-            console.log(value);
+            this.$store
+                .dispatch("login", values)
+                .then((response) => {
+                    this.login_alert_variant = "bg-green-500";
+                    this.login_alert_message = `Success, ${response.data.message}`;
+                    this.login_in_submission = true;
+                })
+                .catch((error) => {
+                    this.error = error.response;
+                });
+            // method properties teggle Modal
         },
     },
 };

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <router-view></router-view>
         <!-- Header Components -->
         <header-navigasi />
         <!-- Introduction -->
@@ -558,6 +559,8 @@
         <!-- Auth Modal -->
         <auth />
     </div>
+    <!-- <router-view /> -->
+    <router-view></router-view>
 </template>
 
 <script>

@@ -13,15 +13,6 @@ class AuthController extends Controller
     // Register Function
     public function register(Request $request)
     {
-        // return response()->json("Register Function", 200); ..debug
-        // $this->validate($request, [
-        //     'name' => 'required|min:4',
-        //     'email' => 'required|email|unique:users',
-        //     'age' => 'required',
-        //     'password' => 'required|min:8',
-        //     'country' => 'required',
-        //     'tos' => 'required',
-        // ]);
         $validator =  Validator::make($request->all(), [
                 'name' => 'required|min:4',
                 'email' => 'required|email|unique:users',
@@ -56,7 +47,7 @@ class AuthController extends Controller
 
         if (auth()->attempt($loginData)) {
             $token = auth()->user()->createToken('LaravelAuthApp')->accessToken;
-            return response()->json(['token' => $token, 'message' => 'Akses Berhasil'], 200);
+            return response()->json(['token' => $token, 'message' => 'Login Berhasil!'], 200);
         } else {
             return response()->json(['error' => 'Akses Tidak Dizinkan'], 401);
         }
@@ -69,5 +60,10 @@ class AuthController extends Controller
             $token->delete();
         });
         return response()->json('Succesfully Logout');
+    }
+
+    public function users()
+    {
+        return response()->json("DATA USERS", 200);
     }
 }
